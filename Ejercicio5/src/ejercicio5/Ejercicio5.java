@@ -62,6 +62,10 @@ public class Ejercicio5 {
             {
                 opcionIncorrecta = true; 
             }
+             else
+            {
+                opcionIncorrecta = false; 
+            }
         } while (opcionIncorrecta); 
     }
     public static float areaTriangulo (float base, float altura)
