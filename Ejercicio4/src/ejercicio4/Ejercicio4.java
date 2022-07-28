@@ -22,7 +22,7 @@ public class Ejercicio4 {
       boolean ingresoDatos = false; 
       boolean existeMatriz = false;
       int dimenx = 0, dimeny = 0; 
-      int menorX=0, menorY=0 ; 
+      int menorX=2000 ; 
       int matrizU[] = null; 
       int matrizB[][] = null; 
       boolean esDoble = false; 
@@ -105,10 +105,10 @@ public class Ejercicio4 {
                           {
                           for (int x = 0; x < dimenx; x++)
                               {
-                                  System.out.print("{");
+                                  System.out.print("\n {");
                                   for(int y = 0; y <dimeny; y++)
                                   {
-                                       System.out.println(" " + matrizB[x][y] + " "); 
+                                       System.out.print(" " + matrizB[x][y] + " "); 
                                       
                                   }
                                   System.out.print("} \n");
@@ -119,7 +119,7 @@ public class Ejercicio4 {
                               System.out.print("{");
                                   for(int x = 0; x <dimeny; x++)
                                   {
-                                       System.out.println(" " + matrizU[x] + " "); 
+                                       System.out.print(" " + matrizU[x] + " "); 
                                       
                                   }
                                   System.out.print("} \n");
@@ -135,17 +135,38 @@ public class Ejercicio4 {
                     {
                          if(esDoble)
                           {
-                              
+                              for (int x = 0; x < dimenx; x++)
+                              {
+                                  for (int y = 0; y <dimeny; y++)
+                                  {
+                                  if (menorX > matrizB[x][y])
+                                    {
+                                        menorX = matrizB[x][y];
+                                    }
+                                  }
+                                 
+                              }
+
                           }
+                          
                           else
                           {
-                          
+                          for (int x = 0; x < dimenx; x++)
+                              {
+                                 if (menorX > matrizU[x])
+                                 {
+                                     menorX = matrizU[x];
+                                 }
+                              }
+
                           }
+                         System.out.println(" El valor menor es " +  menorX);
                     } else
                     {
                     System.out.println("No ha ingresado valores a la matriz");
                     continuar = true; 
                     }
+                    
                    break; 
                case 5: 
                     System.exit(0); 
